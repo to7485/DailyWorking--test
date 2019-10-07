@@ -3,7 +3,7 @@ import { Text, View } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import VehicleEditorScreen from './screens/VehicleEditorScreen';
 import ListingEditorScreen from './screens/ListingEditorScreen';
-import MyVehicleListScreen from './screens/MyVehicleListScreen';
+import MainScreen from './screens/MainScreen';
 import VehicleDetailScreen from './screens/VehicleDetailScreen';
 import RegisterScreen from './screens/RegisterScreen';
 import RegisterScreen1 from './screens/RegisterScreen1';
@@ -19,7 +19,7 @@ import {createBottomTabNavigator} from 'react-navigation-tabs'
 const defaultNavigationOptions = {
  headerTintColor: 'white',
  headerStyle: {
-   backgroundColor: 'tomato',
+   backgroundColor: '#0C00AF',
  },
 };
 class DetailsScreen extends React.Component {
@@ -33,7 +33,7 @@ class DetailsScreen extends React.Component {
 }
 const HomeStack = createStackNavigator(
  {
-   Home: MyVehicleListScreen,
+   Home: MainScreen,
    VehicleDetail: VehicleDetailScreen,
  },
  {
@@ -49,6 +49,15 @@ const AuctionStack = createStackNavigator(
    defaultNavigationOptions,
  }
 );
+const MypageStack = createStackNavigator(
+  {
+    Home: MainScreen,
+    VehicleDetail: VehicleDetailScreen,
+  },
+  {
+    defaultNavigationOptions,
+  }
+ );
 const SettingsStack = createStackNavigator(
  {
    Settings: SettingsScreen,
@@ -60,9 +69,10 @@ const SettingsStack = createStackNavigator(
 );
 const MainTab = createBottomTabNavigator(
  {
-   MyCars: HomeStack,
-   Auction: AuctionStack,
-   Settings: SettingsStack,
+   홈: HomeStack,
+   출퇴근: AuctionStack,
+   마이페이지:MypageStack,
+   설정: SettingsStack,
  },
  {
    /* Other configuration remains unchanged */
@@ -70,13 +80,16 @@ const MainTab = createBottomTabNavigator(
      tabBarIcon: ({ focused, horizontal, tintColor }) => {
        const { routeName } = navigation.state;
        let iconName;
-       if (routeName === 'MyCars') {
+       if (routeName === '홈') {
          iconName = 'ios-home';
-       } else if (routeName === 'Auction') {
+       } else if (routeName === '출퇴근') {
          iconName = 'ios-walk';
-       } else if (routeName === 'Settings') {
-         iconName = 'ios-settings';
+       } else if (routeName === '마이페이지') {
+         iconName = 'ios-man';
        }
+       else if (routeName === '설정') {
+        iconName = 'ios-settings';
+      }
        // You can return any component that you like here! We usually use an
        // icon component from react-native-vector-icons
        return (
@@ -89,7 +102,7 @@ const MainTab = createBottomTabNavigator(
      },
    }),
    tabBarOptions: {
-     activeTintColor: 'tomato',
+     activeTintColor: '#0C00AF',
      inactiveTintColor: 'gray',
    },
  }

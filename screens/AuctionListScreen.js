@@ -58,14 +58,14 @@ class AuctionListScreen extends Component {
           this.props.navigation.push('VehicleDetail', {
             vehicle: {
               vin: 'abc',
-              manufacturer: 'Tesla',
-              model: 'Model 3',
-              year: 2018,
+              manufacturer: '일반노동',
+              model: 'OO건설',
+              year: 2019,
               image:
-                'https://www.tesla.com/sites/default/files/images/model-3/model_3--side_profile.png?20170801',
+                'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTGUk0s58djeFoOHKm14nzZ2gn_nvnGVO4dLcQ6KUYlWD_FMh5mPA',
             },
             listing: item,
-            title: 'Model 3',
+            title: 'OO건설',
           }); //TODO: 실제 데이터로 변경
         }}
       />
