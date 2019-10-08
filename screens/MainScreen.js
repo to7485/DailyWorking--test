@@ -23,7 +23,7 @@ class AuctionListScreen extends Component {
     const params = navigation.state.params || {};
 
     return {
-      title: 'Auction',
+      title: '',
     };
   };
 

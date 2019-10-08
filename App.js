@@ -1,13 +1,14 @@
 import React from 'react';
 import { Text, View } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
-import VehicleEditorScreen from './screens/VehicleEditorScreen';
+import PersonInfoScreen from './screens/PersonInfoScreen';
 import ListingEditorScreen from './screens/ListingEditorScreen';
 import MainScreen from './screens/MainScreen';
 import VehicleDetailScreen from './screens/VehicleDetailScreen';
 import RegisterScreen from './screens/RegisterScreen';
 import RegisterScreen1 from './screens/RegisterScreen1';
 import RegisterScreen2 from './screens/RegisterScreen2';
+import MypageScreen from './screens/MypageScreen';
 import AuctionListScreen from './screens/AuctionListScreen';
 import SettingsScreen from './screens/SettingsScreen';
 import LoginScreen from './screens/LoginScreen';
@@ -51,7 +52,7 @@ const AuctionStack = createStackNavigator(
 );
 const MypageStack = createStackNavigator(
   {
-    Home: MainScreen,
+    Home: MypageScreen,
     VehicleDetail: VehicleDetailScreen,
   },
   {
@@ -67,6 +68,15 @@ const SettingsStack = createStackNavigator(
    defaultNavigationOptions,
  }
 );
+const PersonInfoStack = createStackNavigator(
+  {
+    PersonInfo: PersonInfoScreen,
+    Details: DetailsScreen,
+  },
+  {
+    defaultNavigationOptions,
+  }
+ );
 const MainTab = createBottomTabNavigator(
  {
    홈: HomeStack,
@@ -107,9 +117,6 @@ const MainTab = createBottomTabNavigator(
    },
  }
 );
-const VehicleEditorStack = createStackNavigator({
- VehicleEditor: VehicleEditorScreen,
-});
 const ListingEditorStack = createStackNavigator({
  ListingEditor: ListingEditorScreen,
 });
@@ -120,11 +127,11 @@ const RootStack = createStackNavigator(
    },
    MyCarList:MainTab,
    ListingEditorStack,
-   VehicleEditorStack,
    Login: LoginScreen,
    Register: RegisterScreen,
    Register1: RegisterScreen1,
-   Register2: RegisterScreen2
+   Register2: RegisterScreen2,
+   PersonInfo: PersonInfoScreen
  },
  {
    mode: 'modal',

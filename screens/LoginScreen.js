@@ -32,7 +32,7 @@ export default class LoginScreen extends Component {
                         style={{
                             fontSize: 50,
                             color: '#0C00AF',
-                            marginTop: -20,
+                            marginTop: -10,
                             fontWeight: '200',
                         }}
                         >

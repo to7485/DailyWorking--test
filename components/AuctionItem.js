@@ -42,39 +42,23 @@ class AuctionItem extends Component {
           //
         />
         <View style={{ flexDirection: 'column' }}>
-          <Text style={{ fontSize: 18, color: '#333', fontWeight: '400' }}>
+          <Text style={{ fontSize: 20, color: '#333', fontWeight: '400' }}>
             {vehicle.model}
           </Text>
           <View style={{ flexDirection: 'row', alignItems: 'center' }}>
             <Ionicons name={'ios-calendar'} size={15} color={'#666'} />
-            <Text style={{ fontSize: 10, color: '#333', fontWeight: '300' }}>
+            <Text style={{ fontSize: 15, color: '#333', fontWeight: '300' }}>
             {vehicle.manufacturer} 
             </Text>
             <Text
               style={{
                 marginLeft: 5,
-                fontSize: 12,
+                fontSize: 15,
                 color: '#666',
                 fontWeight: '400',
               }}
             >
               {vehicle.year}
-            </Text>
-            <Ionicons
-              name={'ios-trending-up'}
-              size={15}
-              style={{ marginLeft: 10, marginRight: 5 }}
-              color={'#666'}
-            />
-            <Text
-              style={{
-                marginLeft: 5,
-                fontSize: 12,
-                color: '#666',
-                fontWeight: '400',
-              }}
-            >
-              {this.props.offers.length}
             </Text>
           </View>
           <Text style={{ fontSize: 12, color: '#666', fontWeight: '300' }}>
